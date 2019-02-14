@@ -35,12 +35,12 @@ kapt {
     generateStubs = true
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(path: ':domain')
-    compile libraries.rxJava
-    compile libraries.rxAndroid
-    compile libraries.kotlin8
-    compile libraries.javax
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':domain')
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.kotlin8
+    implementation libraries.javax
 
 }
 
