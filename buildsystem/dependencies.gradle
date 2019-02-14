@@ -79,7 +79,8 @@ ext.libraries =[
         permDispatcher          : "com.github.hotchemi:permissionsdispatcher:$versions.permDispatcher",
         glideAnotation          : "com.github.bumptech.glide:compiler:$versions.glide",
         glide                   : "com.github.bumptech.glide:glide:$versions.glide",
-        kotlin7                 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin_version",
+        kotlin8                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin_version",
+        kotlin7                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_version",
         kotterKnife             : "com.jakewharton:kotterknife:$versions.kotterKnife",
         //test
         junit                   : "junit:junit:$versions.junit",

@@ -1,0 +1,43 @@
+//apply plugin: 'java'
+apply plugin: 'idea'
+//apply plugin: "net.ltgt.apt"
+apply plugin: "kotlin"
+apply plugin: "kotlin-kapt"
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile libraries.javax
+    compile libraries.rxJava
+//    compileOnly libraries.findbugsAnnotation
+//    compile libraries.supportAnnotations
+    compile libraries.javax
+    compile libraries.kotlin8
+    compile libraries.retrofit
+    compile libraries.gson
+
+// required if you want to use Mockito for unit tests
+//    testCompile libraries.mockito
+//    testCompile libraries.mockitoInline
+
+    testCompile libraries.junit
+
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath gradlePlugins.kotlin
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
