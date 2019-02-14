@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+apply plugin:'kotlin-kapt'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion app.compileSdk
+//    buildToolsVersion app.buildTools
+
+    defaultConfig {
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+    }
+
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "MOCK_MODE", "false"
+        }
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "MOCK_MODE", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+    }
+}
+kapt {
+    generateStubs = true
+}
+dependencies {
+//    compile libraries.javax
+    implementation libraries.dagger
+    annotationProcessor libraries.daggerCompiler
+    kapt libraries.daggerCompiler
+    implementation libraries.timber
+//    androidTestCompile libraries.androidTestRunner
+//    androidTestCompile libraries.supportAnnotations
+//    androidTestCompile libraries.androidTestRules
+//    androidTestCompile libraries.assertjAndroid
+    implementation project(path: ':domain')
+//    compile project(path: ':datalayer:data-base')
+    implementation project(path: ':datalayer:network')
+    implementation libraries.kotlin8
+    implementation libraries.gson
+    implementation libraries.rxJava
+    implementation libraries.retrofit
+    implementation libraries.converterGson
+    implementation libraries.adapterRxjava
+//    compile libraries.okhttpLogging
+//    compile libraries.okhttp
+
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://www.jitpack.io" }
+}
