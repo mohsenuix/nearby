@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin:'kotlin-kapt'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion app.compileSdk
+//    buildToolsVersion app.buildTools
+
+    defaultConfig {
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+    }
+
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "MOCK_MODE", "false"
+        }
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "MOCK_MODE", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+    }
+}
+kapt {
+    generateStubs = true
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':domain')
+    compile libraries.rxJava
+    compile libraries.rxAndroid
+    compile libraries.kotlin8
+    compile libraries.javax
+
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://www.jitpack.io" }
+}

@@ -1,1 +1,1 @@
-include ':presentation', ':domain', ':datalayer:data', ':datalayer:network'
+include ':presentation', ':domain', ':datalayer:data', ':datalayer:network', ':database'

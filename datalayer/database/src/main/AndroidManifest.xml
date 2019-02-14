@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="ir.cafebazzar.app.nearby">
+
+    <dist:module dist:instant="true" />
+
+</manifest>
