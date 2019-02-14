@@ -1,4 +1,4 @@
-package ir.cafebazzar.app.nearby;
+package main.kotlin.nearby;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ir.cafebazzar.app.nearby", appContext.getPackageName());
+        assertEquals("main.kotlin.nearby", appContext.getPackageName());
     }
 }

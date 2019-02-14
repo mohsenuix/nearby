@@ -1,4 +1,4 @@
-package ir.cafebazzar.app.nearby;
+package main.kotlin.nearby;
 
 import org.junit.Test;
 
