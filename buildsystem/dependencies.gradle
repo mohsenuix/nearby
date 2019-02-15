@@ -55,6 +55,8 @@ ext.libraries =[
         findbugsAnnotation      : "com.google.code.findbugs:annotations:$versions.findbugsAnnotation",//idk
         dagger                  : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler          : "com.google.dagger:dagger-compiler:$versions.dagger",
+        supportDagger           : "com.google.dagger:dagger-android-support:$versions.dagger",
+        supportDaggerCompiler   : "com.google.dagger:dagger-android-processor:$versions.dagger",
         leakCanaryDebug         : "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}",
         leakCanaryRelease       : "com.squareup.leakcanary:leakcanary-android-no-op:${versions.leakCanary}",
         appCompatV7             : "com.android.support:appcompat-v7:$versions.androidSupport",
