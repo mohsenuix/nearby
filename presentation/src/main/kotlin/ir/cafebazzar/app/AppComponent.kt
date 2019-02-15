@@ -41,7 +41,7 @@ abstract class AppComponent
 ////    @Provides
 ////    @Singleton
 ////    fun postExecutionThread(): PostExecutionThread {
-////        return MainThreadExecutor()
+////        return UiThreadExecutor()
 ////    }
 //
 //
