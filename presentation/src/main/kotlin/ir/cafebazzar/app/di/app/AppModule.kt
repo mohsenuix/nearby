@@ -10,7 +10,7 @@ import ir.cafebazzar.app.ui.UiThreadExecutor
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module(includes = [BuilderModule::class])
+@Module
 class AppModule{
     @Provides
     @Singleton
@@ -26,7 +26,7 @@ class AppModule{
 
 
     /**
-     * there is a bug that BuldConfig.DEBUG is unknown in others module
+     * there is a bug that BuildConfig.DEBUG is unknown in others module
      * so we inject this flag to other modules.
      */
     @Provides

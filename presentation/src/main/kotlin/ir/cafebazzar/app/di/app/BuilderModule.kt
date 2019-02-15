@@ -1,10 +1,15 @@
 package ir.cafebazzar.app.di.app
 
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
+import ir.cafebazzar.app.ui.activity.home.HomeActivity
+import ir.cafebazzar.app.ui.activity.home.HomeActivityModule
+import javax.inject.Singleton
 
-@Module
-class BuilderModule {
-//    @ContributesAndroidInjector(modules = { MainActivityModule.class, MainActivityFragmentModule .class })
-//    abstract fun bindMainActivity(): MainActivity
+@Module()
+abstract class BuilderModule {
+    @Singleton
+    @ContributesAndroidInjector(modules = [HomeActivityModule::class])
+    abstract fun bindHomeActivity(): HomeActivity
 
 }

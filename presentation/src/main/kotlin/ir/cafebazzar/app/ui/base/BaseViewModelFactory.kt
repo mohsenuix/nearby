@@ -6,11 +6,8 @@ import javax.inject.Inject
 import androidx.lifecycle.ViewModelProvider
 
 
-internal abstract class BaseViewModelFactory<S : BaseViewState> protected constructor()
-    : ViewModelProvider.Factory {
-
-    @Inject
-    protected var mDisposables: CompositeDisposable? = null
+abstract class BaseViewModelFactory<S : BaseViewState> : ViewModelProvider.Factory {
+    protected var mDisposables: CompositeDisposable = CompositeDisposable()
 
     protected val mToastLiveData: SingleLiveData<Int> = SingleLiveData()
     protected val mStateLD: MutableLiveData<S> = MutableLiveData()
