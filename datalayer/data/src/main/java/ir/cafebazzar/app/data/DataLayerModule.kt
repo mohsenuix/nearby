@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import dagger.Module
 import dagger.Provides
+import ir.cafebazzar.app.network.ForSquareApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -21,6 +22,11 @@ import javax.inject.Named
 class DataLayerModule  {
     //todo The base url should received from server.
     private val BASE_API_URL ="https://api.foursquare.com/v2/"
+
+    @Singleton
+    @Provides
+    fun provideForSquareApi(retrofit: Retrofit): ForSquareApi =
+            retrofit.create(ForSquareApi::class.java)
 
     @Singleton
     @Provides
