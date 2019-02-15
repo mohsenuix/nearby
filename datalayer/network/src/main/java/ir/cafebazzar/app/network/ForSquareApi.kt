@@ -8,7 +8,7 @@ interface ForSquareApi {
 
     /**
      * @param ll is your position's lat lang e.g. 44.3,37.2
-     * @return nearby's venues list
+     * @return nearby's venues list in [Single] format
      */
     @GET("venues/search")
     fun getWeeklyRanking(ll:String): Single<List<Venue>>
