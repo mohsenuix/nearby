@@ -1,4 +1,4 @@
-package ir.cafebazzar.app
+package ir.cafebazzar.app.di.app
 
 import dagger.Module
 

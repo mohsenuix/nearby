@@ -1,9 +1,10 @@
-package ir.cafebazzar.app
+package ir.cafebazzar.app.di.app
 
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
+import ir.cafebazzar.app.App
 import javax.inject.Singleton
 
 @Singleton

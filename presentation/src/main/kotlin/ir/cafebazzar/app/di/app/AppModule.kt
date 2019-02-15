@@ -1,10 +1,8 @@
-package ir.cafebazzar.app
+package ir.cafebazzar.app.di.app
 
-import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ir.cafebazzar.app.data.extractor.NetworkJobExecutor
-import ir.cafebazzar.app.domain.ForApplication
 import ir.cafebazzar.app.domain.executor.PostExecutionThread
 import ir.cafebazzar.app.domain.executor.UseCaseExecutor
 import ir.cafebazzar.app.nearby.BuildConfig
