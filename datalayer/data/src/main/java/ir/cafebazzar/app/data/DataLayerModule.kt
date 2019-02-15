@@ -1,4 +1,4 @@
-package com.example.datalayer
+package ir.cafebazzar.app.data
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -13,12 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
 
 /**
- * provides dagger dependency injection modules and object life cycle
- * and config all data uses in datalayer module
+ * provides dagger dependency injection modules and object life cycles
+ * and configs all data uses in datalayer module
  */
 
 @Module
 class DataLayerModule  {
+    //todo The base url should received from server.
     private val BASE_API_URL ="https://api.foursquare.com/v2/"
 
     @Singleton
@@ -33,14 +34,13 @@ class DataLayerModule  {
 
     @Singleton
     @Provides
-        fun provideGson(): Gson = GsonBuilder().setLenient().setLenient().create()
+        fun provideGson(): Gson = GsonBuilder().setLenient().create()
 
 
     @Singleton
     @Provides
     fun provideOkHttpClient(@Named("isMock") isMock: Boolean): OkHttpClient {
         val builder = OkHttpClient.Builder()
-                //todo change uplaoder and requests
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .connectTimeout(15, TimeUnit.SECONDS)
