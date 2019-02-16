@@ -4,11 +4,12 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.ListAdapter
 import io.reactivex.subjects.PublishSubject
+import ir.cafebazzar.app.domain.entity.VenueModel
 import javax.inject.Inject
 
 
 class VenueRecyclerView @Inject constructor(@NonNull var diffCallback:VenueDiffCallBack,
-                        var factory:VenueVHFactory) : ListAdapter<Venue, VenueVH>(diffCallback) {
+                        var factory:VenueVHFactory) : ListAdapter<VenueModel, VenueVH>(diffCallback) {
 
     private val mClickPS : PublishSubject<VenueVHAction> = PublishSubject.create()
 

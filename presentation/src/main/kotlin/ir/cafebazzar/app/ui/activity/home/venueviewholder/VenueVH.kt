@@ -2,10 +2,11 @@ package ir.cafebazzar.app.ui.activity.home.venueviewholder
 
 import io.reactivex.subjects.PublishSubject
 import android.view.View
+import ir.cafebazzar.app.domain.entity.VenueModel
 import ir.cafebazzar.app.ui.base.recyclerview.BaseViewHolder
 
 
-class VenueVH(itemView: View, viewModel: VenueViewModel) : BaseViewHolder<VenueVHAction, Venue, VenueViewModel>(itemView, viewModel) {
+class VenueVH(itemView: View, viewModel: VenueViewModel) : BaseViewHolder<VenueVHAction, VenueModel, VenueViewModel>(itemView, viewModel) {
 
 
 //    @BindView(R.id.imgAvatarRow)
