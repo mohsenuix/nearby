@@ -13,6 +13,7 @@ interface ForSquareApi {
      * @param ll is your position's lat lang e.g. 44.3,37.2
      * @return nearby's venues list in [Single] format
      */
+    //todo remove hard codes.
     @GET("venues/search?client_id=UCPCTHQXHJIHTWHW3FVT5JL5N021PCGJVABJKXGBYWHJYH4P&" +
             "client_secret=PGV3H511WHFGVFNJ102ZIPNNGSA5MAGDM5ISEYNQS1MEQ5JN&v=20190216")
     fun getNearbyVenues(@Query("ll") latLng:String): Single<BaseModel<Venue.VenuesResponse>>
