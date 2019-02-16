@@ -51,7 +51,7 @@ dependencies {
     implementation libraries.gson
     implementation libraries.rxJava
     implementation libraries.rxAndroid
-    implementation project(path: ':datalayer:data')
+    api project(path: ':datalayer:data')
     // Developer Tools
     implementation libraries.timber
 

@@ -32,8 +32,8 @@ dependencies {
     implementation project(path:':domain')
     implementation libraries.gson
     implementation libraries.rxJava
-    implementation libraries.retrofit
-    implementation libraries.converterGson
+    api libraries.retrofit
+    api libraries.converterGson
     implementation libraries.adapterRxjava
 //    implementation libraries.okhttpLogging
 //    implementation libraries.okhttp

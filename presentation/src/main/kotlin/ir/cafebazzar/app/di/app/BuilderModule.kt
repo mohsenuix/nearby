@@ -8,7 +8,8 @@ import javax.inject.Singleton
 
 @Module()
 abstract class BuilderModule {
-    @Singleton
+
+//    todo add activity scope
     @ContributesAndroidInjector(modules = [HomeActivityModule::class])
     abstract fun bindHomeActivity(): HomeActivity
 

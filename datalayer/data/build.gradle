@@ -46,15 +46,15 @@ dependencies {
 //    androidTestCompile libraries.assertjAndroid
     implementation project(path: ':domain')
 //    compile project(path: ':datalayer:data-base')
-    implementation project(path: ':datalayer:network')
+    api project(path: ':datalayer:network')
     implementation libraries.kotlin8
     implementation libraries.gson
     implementation libraries.rxJava
-    implementation libraries.retrofit
-    implementation libraries.converterGson
+    api libraries.retrofit
+    api libraries.converterGson
     implementation libraries.adapterRxjava
-//    compile libraries.okhttpLogging
-//    compile libraries.okhttp
+    implementation libraries.okhttpLogging
+    implementation libraries.okhttp
 
 }
 

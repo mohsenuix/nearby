@@ -1,4 +1,4 @@
-//apply plugin: 'java'
+apply plugin: 'java'
 apply plugin: 'idea'
 //apply plugin: "net.ltgt.apt"
 apply plugin: "kotlin"
@@ -6,15 +6,15 @@ apply plugin: "kotlin-kapt"
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile libraries.javax
-    compile libraries.rxJava
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraries.javax
+    implementation libraries.rxJava
 //    compileOnly libraries.findbugsAnnotation
 //    compile libraries.supportAnnotations
-    compile libraries.javax
-    compile libraries.kotlin8
-    compile libraries.retrofit
-    compile libraries.gson
+    implementation libraries.javax
+    implementation libraries.kotlin8
+    implementation libraries.retrofit
+    implementation libraries.gson
 
 // required if you want to use Mockito for unit tests
 //    testCompile libraries.mockito
