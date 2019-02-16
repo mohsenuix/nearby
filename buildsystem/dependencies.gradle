@@ -1,3 +1,4 @@
+//todo clean up 
 ext.app = [
         applicationId: "ir.cafebazzar.app.nearby",
         compileSdk   : 28,
