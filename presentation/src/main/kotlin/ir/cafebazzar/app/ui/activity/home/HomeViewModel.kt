@@ -13,9 +13,9 @@ init {
     getNearbies()
 }
 
-    //44.3,37.2
+    //40.7484,-73.9857
     fun getNearbies(){
-        getNearby.execute(LatLng(44.3,37.2)).subscribe({ venues->
+        getNearby.execute(LatLng(40.7484,-73.9857)).subscribe({ venues->
             Timber.i("emitter size is"+venues.size)
             stateLD.postValue(HomeViewState(venues))
         },{t: Throwable? ->

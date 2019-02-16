@@ -17,7 +17,7 @@ sealed class Venue {
                         @SerializedName("lang") val lang: Double,
                         @SerializedName("distance") val distance: Int)
 
-    data class Category(@SerializedName("id") val id: Int,
+    data class Category(@SerializedName("id") val id: String,
                         @SerializedName("name") val name: String,
                         @SerializedName("pluralName") val pluralName: String,
                         @SerializedName("shortName") val shortName: String,
