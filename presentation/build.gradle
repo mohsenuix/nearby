@@ -70,7 +70,7 @@ dependencies {
 //    implementation "android.arch.lifecycle:common-java8:1.1.1"
 //    implementation "android.arch.paging:runtime:1.1.1"
 //    implementation "android.arch.lifecycle:reactivestreams:$project.archComponent"
-
+    implementation 'com.android.support:multidex:1.0.3'
     // Resolve conflicts between main and test APK:
     implementation "com.android.support:recyclerview-v7:28.0.1"
 }

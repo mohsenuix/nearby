@@ -9,7 +9,9 @@ import javax.inject.Inject
 class HomeViewModel
 @Inject constructor(val getNearby: GetNearby)
     : BaseViewModel<HomeViewState>() {
-
+init {
+    getNearbies()
+}
 
     fun getNearbies(){
         getNearby.execute(LatLng(25.0,3.0)).subscribe { emit->

@@ -10,10 +10,12 @@ import ir.cafebazzar.app.data.repository.DataLayerLayerRepositoryImp
 import ir.cafebazzar.app.domain.repository.DataLayerRepository
 import ir.cafebazzar.app.network.ForSquareApi
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
+import javax.net.ssl.TrustManager
 
 /**
  * provides dagger dependency injection modules and object life cycles
@@ -59,6 +61,13 @@ class DataLayerModule  {
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .connectTimeout(15, TimeUnit.SECONDS)
+        if (isMock) {
+            val logging = HttpLoggingInterceptor()
+            logging.level = HttpLoggingInterceptor.Level.BODY
+            builder.addNetworkInterceptor(logging)
+        }
+
         return builder.build()
     }
+
 }
