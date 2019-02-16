@@ -13,10 +13,13 @@ init {
     getNearbies()
 }
 
+    //44.3,37.2
     fun getNearbies(){
-        getNearby.execute(LatLng(25.0,3.0)).subscribe { emit->
-            Timber.i("emitter size is"+emit.size)
-
-        }
+        getNearby.execute(LatLng(44.3,37.2)).subscribe({ venues->
+            Timber.i("emitter size is"+venues.size)
+            stateLD.postValue(HomeViewState(venues))
+        },{t: Throwable? ->
+            Timber.e(t)
+        })
     }
 }

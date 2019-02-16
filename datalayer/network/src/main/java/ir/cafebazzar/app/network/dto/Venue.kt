@@ -3,7 +3,7 @@ package ir.cafebazzar.app.network.dto
 import com.google.gson.annotations.SerializedName
 
 sealed class Venue {
-    data class Venue(@SerializedName("id") val id: Int,
+    data class Venue(@SerializedName("id") val id: String,
                      @SerializedName("name") val name: String,
                      @SerializedName("contact") val contact: List<String>,
                      @SerializedName("location") val location: Location,

@@ -20,7 +20,7 @@ class DataLayerLayerRepositoryImp
                     val list = ArrayList<VenueModel>()
                     response.response.venues.forEach { list.add(VenueModel(it.id,it.name,it.contact,it.location.address,
                             LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
-                            it.categories[0].icon.prefix+it.categories[0].icon.suffix)) }
+                            "")) }
                     emitter.onSuccess(list)
                 }
         }
