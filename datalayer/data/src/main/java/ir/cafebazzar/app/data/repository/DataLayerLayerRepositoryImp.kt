@@ -18,7 +18,7 @@ class DataLayerLayerRepositoryImp
                 //todo add mapper!
                 response->
                 val list = ArrayList<VenueModel>()
-                response.response.venue.also { list.add(VenueModel(it.id,it.name,it.contact,it.location.address,
+                response.response.venue.also { list.add(VenueModel(it.id,it.name,null,it.location.address,
                         LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
                         "")) }
                 emitter.onSuccess(list)
@@ -32,7 +32,7 @@ class DataLayerLayerRepositoryImp
                     //todo add mapper!
                     response->
                     val list = ArrayList<VenueModel>()
-                    response.response.venues.forEach { list.add(VenueModel(it.id,it.name,it.contact,it.location.address,
+                    response.response.venues.forEach { list.add(VenueModel(it.id,it.name,null,it.location.address,
                             LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
                             "")) }
                     emitter.onSuccess(list)

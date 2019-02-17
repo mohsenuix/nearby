@@ -8,7 +8,7 @@ class DetailActivityViewModel
 @Inject constructor(val getVenueDetail: GetVenueDetail)
     : BaseViewModel<DetailActivityViewState>(){
     init {
-
+        getVenueDetail()
     }
 
     fun getVenueDetail(){

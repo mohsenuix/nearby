@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 sealed class Venue {
     data class Venue(@SerializedName("id") val id: String,
                      @SerializedName("name") val name: String,
-                     @SerializedName("contact") val contact: List<String>,
+                     @SerializedName("contact") val contact: Contact,
                      @SerializedName("location") val location: Location,
                      @SerializedName("categories") val categories: List<Category>,
                      @SerializedName("verified") val verified: Boolean,
@@ -36,4 +36,8 @@ sealed class Venue {
 
     data class VenueResponse(@SerializedName("venue")
                              val venue: ir.cafebazzar.app.network.dto.Venue.Venue)
+
+    data class Contact(@SerializedName("phone") val phone: String,
+                       @SerializedName("formattedPhone") val formattedPhone: String)
+
 }

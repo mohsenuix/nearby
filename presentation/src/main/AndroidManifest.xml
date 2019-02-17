@@ -3,6 +3,7 @@
     package="ir.cafebazzar.nearby">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <dist:module dist:instant="true" />
    <!--todo cleanup-->
@@ -14,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="ir.cafebazzar.app.ui.activity.home.HomeActivity">
+        <activity android:name="ir.cafebazzar.app.ui.activity.home.HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -23,7 +25,7 @@
         </activity>
 
         <activity android:name="ir.cafebazzar.app.ui.activity.detail.DetailActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
     </application>

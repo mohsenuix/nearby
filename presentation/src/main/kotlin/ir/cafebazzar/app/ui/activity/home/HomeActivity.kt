@@ -20,12 +20,11 @@ import android.location.Location
 import ir.cafebazzar.app.ui.activity.detail.DetailActivity
 import ir.cafebazzar.app.util.distance
 
-
 class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
     @Inject
     lateinit var venueAdapterProvider: Provider<VenueRecyclerView>
     lateinit var venueAdapter: VenueRecyclerView
-    val rxPermissions = RxPermissions(this)
+    private val rxPermissions = RxPermissions(this)
     var lastLocation: Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

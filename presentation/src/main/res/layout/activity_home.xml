@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/dark_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center|top"
+            app:layout_collapseMode="pin">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/medium_spacing"
+                android:clickable="true"
+                android:focusable="true"
+                app:tint="@color/black"
+                android:src="@drawable/feed_profile"
+                android:tint="@color/white"
+                android:layout_gravity="right|center" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="اطراف"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_search"
+                android:layout_width="45dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                app:tint="@color/black"
+                android:layout_height="45dp"
+                android:layout_gravity="left|center"
+                android:padding="@dimen/medium_spacing"
+                android:src="@android:drawable/ic_menu_search"
+                android:tint="@color/white"
+                />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
-</LinearLayout>
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/toolbar"/>
+</RelativeLayout>
