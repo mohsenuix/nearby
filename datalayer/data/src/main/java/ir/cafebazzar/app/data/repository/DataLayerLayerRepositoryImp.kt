@@ -14,7 +14,7 @@ class DataLayerLayerRepositoryImp
     :DataLayerRepository {
     override fun getVenueDetails(id: String): Single<List<VenueModel>> {
         return Single.create { emitter ->
-            forsquareApi.getVenueDetails(id).subscribe {
+            forsquareApi.getVenueDetails(id).subscribe ({
                 //todo add mapper!
                 response->
                 val list = ArrayList<VenueModel>()
@@ -22,13 +22,15 @@ class DataLayerLayerRepositoryImp
                         LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
                         "")) }
                 emitter.onSuccess(list)
-            }
+            },{
+                emitter.onError(it)
+            })
         }
     }
 
     override fun getNearbyVenues(ll: String): Single<List<VenueModel>> {
         return Single.create { emitter ->
-                forsquareApi.getNearbyVenues(ll).subscribe {
+                forsquareApi.getNearbyVenues(ll).subscribe ({
                     //todo add mapper!
                     response->
                     val list = ArrayList<VenueModel>()
@@ -36,7 +38,9 @@ class DataLayerLayerRepositoryImp
                             LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
                             "")) }
                     emitter.onSuccess(list)
-                }
+                },{
+                    emitter.onError(it)
+                })
         }
     }
 }

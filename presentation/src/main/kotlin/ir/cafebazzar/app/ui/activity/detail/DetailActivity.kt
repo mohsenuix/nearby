@@ -20,9 +20,6 @@ class DetailActivity : BaseDaggerActivity<DetailActivityViewState,DetailActivity
 
     }
 
-
-
-
     private fun viewPagerInit() {
         val urls = ArrayList<Int>()
         urls.add(R.drawable.r1)
@@ -34,26 +31,5 @@ class DetailActivity : BaseDaggerActivity<DetailActivityViewState,DetailActivity
         indicator!!.setViewPager(view_pager)
     }
 
-
-
-//    @BindView(R.id.view_pager)
-//    var viewPager: ViewPager? = null
     var adapter: DetailSliderAdapter?=null
-
-//    @BindView(R.id.indicator)
-//    var indicator: CircleIndicator? = null
-
-//    @BindView(R.id.detail_appbar)
-//    var appBarLayout: AppBarLayout? = null
-
-
-//
-//    @BindView(R.id.img_close)
-//    var imgClose: AppCompatImageView? = null
-
-//    @OnClick(R.id.img_close)
-//    fun closeClick(view: View) {
-//        getContainer().onBackPressed()
-//    }
-
 }
