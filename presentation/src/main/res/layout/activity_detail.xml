@@ -41,12 +41,12 @@
 
                 </androidx.viewpager.widget.ViewPager>
 
-                <!--<me.relex.circleindicator.CircleIndicator-->
-                    <!--android:id="@+id/indicator"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="48dp"-->
-                    <!--android:layout_gravity="bottom"-->
-                    <!--android:layoutDirection="ltr" />-->
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"
+                    android:layoutDirection="ltr" />
 
             </FrameLayout>
 

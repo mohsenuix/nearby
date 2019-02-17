@@ -93,4 +93,5 @@ dependencies {
     implementation "com.android.support:support-core-ui:28.0.1"
     implementation 'com.google.android.material:material:1.0.0'
     implementation libraries.glide
+    implementation 'me.relex:circleindicator:1.2.2@aar'
 }

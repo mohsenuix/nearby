@@ -31,7 +31,7 @@ class DetailActivity : BaseDaggerActivity<DetailActivityViewState,DetailActivity
         urls.add(R.drawable.r1)
         adapter = DetailSliderAdapter(urls)
         view_pager!!.adapter = adapter
-//        indicator!!.setViewPager(viewPager)
+        indicator!!.setViewPager(view_pager)
     }
 
 
@@ -47,7 +47,6 @@ class DetailActivity : BaseDaggerActivity<DetailActivityViewState,DetailActivity
 //    var appBarLayout: AppBarLayout? = null
 
 
-
 //
 //    @BindView(R.id.img_close)
 //    var imgClose: AppCompatImageView? = null
@@ -56,12 +55,5 @@ class DetailActivity : BaseDaggerActivity<DetailActivityViewState,DetailActivity
 //    fun closeClick(view: View) {
 //        getContainer().onBackPressed()
 //    }
-
-
-
-
-
-
-
 
 }

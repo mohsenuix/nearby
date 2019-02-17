@@ -2,6 +2,7 @@ package ir.cafebazzar.app.ui.activity.detail
 
 import ir.cafebazzar.app.domain.interactor.forsquare.GetVenueDetail
 import ir.cafebazzar.app.ui.base.BaseViewModel
+import timber.log.Timber
 import javax.inject.Inject
 
 class DetailActivityViewModel
@@ -16,7 +17,7 @@ class DetailActivityViewModel
                 .subscribe({
 
         },{
-
+            Timber.e(it)
         })
     }
 
