@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -106,22 +107,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--<com.example.presentation.ui.util.view.ExtraTextView-->
-                <!--android:id="@+id/name"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginTop="@dimen/medium_spacing"-->
-                <!--android:gravity="center"-->
-                <!--android:paddingRight="@dimen/medium_spacing"-->
-                <!--android:padding="@dimen/medium_spacing"-->
-                <!--android:text=""-->
-                <!--app:ext_txt_drawable="@drawable/square"-->
-                <!--app:ext_txt_drawableHeight="12dp"-->
-                <!--app:ext_txt_drawablePosition="right"-->
-                <!--app:ext_txt_drawableWidth="12dp"-->
-                <!--android:textColor="@color/black"-->
-                <!--android:textSize="@dimen/font_size_medium_large" />-->
+            <ir.cafebazzar.app.ui.view.ExtraTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:gravity="center"
+                android:paddingRight="@dimen/medium_spacing"
+                android:padding="@dimen/medium_spacing"
+                android:text=""
+                app:ext_txt_drawable="@drawable/square"
+                app:ext_txt_drawableHeight="12dp"
+                app:ext_txt_drawablePosition="right"
+                app:ext_txt_drawableWidth="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_medium_large" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -168,27 +169,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!--<com.example.presentation.ui.util.view.ExtraTextView-->
-                    <!--android:id="@+id/btn_phone"-->
-                    <!--style="@style/Beam.Button.Action"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_alignParentRight="true"-->
-                    <!--android:layout_marginRight="@dimen/medium_spacing"-->
-                    <!--android:background="@drawable/log_out_button_selector"-->
-                    <!--android:clickable="true"-->
-                    <!--android:focusable="true"-->
-                    <!--android:padding="@dimen/medium_spacing"-->
-                    <!--android:paddingRight="4.0dip"-->
+                <ir.cafebazzar.app.ui.view.ExtraTextView
+                    android:id="@+id/btn_phone"
+                    style="@style/Button.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/medium_spacing"
+                    android:background="@drawable/log_out_button_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/medium_spacing"
+                    android:paddingRight="4.0dip"
 
-                    <!--android:text="۰۹۱۲۲۲۲۲۲۲۲"-->
-                    <!--android:textColor="@color/beam_theme_color_hotControls"-->
-                    <!--android:textSize="@dimen/font_size_large"-->
-                    <!--app:ext_txt_drawable="@drawable/material_ic_phone_black_24dp"-->
-                    <!--app:ext_txt_drawableHeight="24dp"-->
-                    <!--app:ext_txt_drawablePosition="right"-->
-                    <!--app:ext_txt_drawableTint="@color/red"-->
-                    <!--app:ext_txt_drawableWidth="24dp" />-->
+                    android:text="۰۹۱۲۲۲۲۲۲۲۲"
+                    android:textColor="@color/dark_red"
+                    android:textSize="@dimen/font_size_large"
+                    app:ext_txt_drawable="@drawable/material_ic_phone_black_24dp"
+                    app:ext_txt_drawableHeight="24dp"
+                    app:ext_txt_drawablePosition="right"
+                    app:ext_txt_drawableTint="@color/red"
+                    app:ext_txt_drawableWidth="24dp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_map"

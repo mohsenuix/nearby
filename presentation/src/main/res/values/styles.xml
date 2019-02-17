@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Button.Action" parent="@style/Button">
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50.0dip</item>
+    </style>
+
+    <style name="Button" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textAppearance">@android:style/TextAppearance</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:minWidth">10.0dip</item>
+        <item name="android:minHeight">10.0dip</item>
+    </style>
+
+
 </resources>

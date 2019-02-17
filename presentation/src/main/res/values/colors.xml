@@ -8,5 +8,7 @@
     <color name="red">#ffff0000</color>
     <color name="gray_medium">#d6d6d6</color>
     <color name="dark_gray">#777</color>
-
+    <color name="dark_blue">#ff3ca2c1</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_red">#ffdd3951</color>
 </resources>

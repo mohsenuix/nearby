@@ -87,12 +87,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation "com.jakewharton.rxbinding2:rxbinding:2.0.0"
-//    implementation "com.jakewharton.rxbinding2:rxbinding-design:$project.rxBinding"
-//    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$project.rxBinding"
+
     implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0"
-//    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$project.rxBinding"
 
     implementation "com.android.support:support-core-ui:28.0.1"
     implementation 'com.google.android.material:material:1.0.0'
-
+    implementation libraries.glide
 }
