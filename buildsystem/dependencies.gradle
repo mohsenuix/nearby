@@ -2,7 +2,7 @@
 ext.app = [
         applicationId: "ir.cafebazzar.app.nearby",
         compileSdk   : 28,
-        buildTools   : '28.0.1',
+        buildTools   : '28.0.3',
         minSdk       : 14,
         targetSdk    : 28,
         versionCode  : 1, // it MUST increase numerically for each google play release or use build number from CI.

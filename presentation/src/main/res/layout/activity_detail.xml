@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ir.cafebazzar.app.ui.view.ExtraTextView
+            <ir.cafebazzar.nearby.ui.view.ExtraTextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ir.cafebazzar.app.ui.view.ExtraTextView
+                <ir.cafebazzar.nearby.ui.view.ExtraTextView
                     android:id="@+id/btn_phone"
                     style="@style/Button.Action"
                     android:layout_width="wrap_content"
