@@ -1,5 +1,6 @@
 package ir.cafebazzar.app.ui.activity.home
 
+import android.location.Location
 import ir.cafebazzar.app.domain.entity.LatLng
 import ir.cafebazzar.app.domain.interactor.forsquare.GetNearby
 import ir.cafebazzar.app.ui.base.BaseViewModel
@@ -21,5 +22,9 @@ init {
         },{t: Throwable? ->
             Timber.e(t)
         })
+    }
+
+    fun updateLocation(location: Location?) {
+
     }
 }

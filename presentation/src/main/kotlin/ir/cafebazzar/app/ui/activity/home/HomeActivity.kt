@@ -1,5 +1,6 @@
 package ir.cafebazzar.app.ui.activity.home
 
+import android.Manifest
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import ir.cafebazzar.app.ui.activity.home.venueviewholder.VenueRecyclerView
@@ -9,20 +10,60 @@ import javax.inject.Inject
 import javax.inject.Provider
 import androidx.recyclerview.widget.RecyclerView
 import ir.cafebazzar.app.util.EndlessRecyclerViewScrollListener
-import ir.cafebazzar.nearby.R
 import timber.log.Timber
+import com.google.android.gms.location.LocationRequest
+import com.patloew.rxlocation.RxLocation
+import com.tbruyelle.rxpermissions2.RxPermissions
+import android.annotation.SuppressLint
+import android.location.Location
 
 
-class HomeActivity: BaseDaggerActivity<HomeViewState, HomeViewModel>() {
+class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
     @Inject
-    lateinit var venueAdapterProvider : Provider<VenueRecyclerView>
-    lateinit var venueAdapter : VenueRecyclerView
+    lateinit var venueAdapterProvider: Provider<VenueRecyclerView>
+    lateinit var venueAdapter: VenueRecyclerView
+    val rxPermissions = RxPermissions(this)
+    var lastLocation: Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(ir.cafebazzar.nearby.R.layout.activity_home)
         createViewModel(HomeViewModel::class.java)
         initRV()
+        initRXLocation()
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun initRXLocation() {
+        // Create one instance and share it
+        val rxLocation = RxLocation(this)
+
+        val locationRequest = LocationRequest.create()
+                .setPriority(LocationRequest.PRIORITY_LOW_POWER)
+                .setInterval(15000)
+        val disposable = rxPermissions
+                .request(Manifest.permission.ACCESS_FINE_LOCATION)
+                .subscribe { granted ->
+                    if (granted) { // Always true pre-M
+                        rxLocation.location().updates(locationRequest)
+                                .subscribe { location ->
+                                    Timber.i("location is ${location.latitude} ," +
+                                            "${location.longitude}")
+                                    Timber.i("location is distance to " +
+                                            "${lastLocation?.distanceTo(location)}")
+                                    if (lastLocation!=null &&
+                                            lastLocation!!.distanceTo(location) > .1) {
+                                        viewModel.updateLocation(location)
+                                    }
+                                    lastLocation = location
+                                }
+
+                    } else {
+
+                        //todo show error
+                    }
+                }
+
     }
 
     private fun initRV() {
@@ -40,5 +81,4 @@ class HomeActivity: BaseDaggerActivity<HomeViewState, HomeViewModel>() {
     override fun handleState(state: HomeViewState) {
         venueAdapter.submitList(state.venues)
     }
-
 }
