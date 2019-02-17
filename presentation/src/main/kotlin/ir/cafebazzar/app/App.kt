@@ -20,4 +20,9 @@ class App : DaggerApplication() {
     private fun timber() {
         Timber.plant(Timber.DebugTree())
     }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
 }

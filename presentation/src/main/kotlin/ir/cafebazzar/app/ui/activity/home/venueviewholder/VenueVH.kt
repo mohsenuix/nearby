@@ -11,7 +11,6 @@ import ir.cafebazzar.nearby.R
 //todo how to access views here
 class VenueVH(itemView: View, viewModel: VenueViewModel) : BaseViewHolder<VenueVHAction, VenueModel, VenueViewModel>(itemView, viewModel) {
 
-
 //    @BindView(R.id.img_picture)
 //    var imgPicture: ImageView? = null
 //

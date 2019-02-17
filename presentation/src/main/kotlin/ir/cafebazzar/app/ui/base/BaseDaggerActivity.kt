@@ -25,9 +25,9 @@ abstract class BaseDaggerActivity<S:BaseViewState,VM:BaseViewModel<S>> :DaggerAp
         startObserving()
     }
 
-    override fun onStop() {
+    override fun onDestroy() {
         clicksCompositDeposable.clear()
-        super.onStop()
+        super.onDestroy()
     }
 
 

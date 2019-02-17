@@ -15,7 +15,9 @@ import com.google.android.gms.location.LocationRequest
 import com.patloew.rxlocation.RxLocation
 import com.tbruyelle.rxpermissions2.RxPermissions
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.location.Location
+import ir.cafebazzar.app.ui.activity.detail.DetailActivity
 import ir.cafebazzar.app.util.distance
 
 
@@ -81,6 +83,7 @@ class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
         val disposable = venueAdapter.mClickPS
                 .subscribe { action ->
                     Timber.i("clicked-- ${action.adapterPosition}")
+                    startActivity(Intent(this@HomeActivity,DetailActivity::class.java))
                 }
         clicksCompositDeposable.add(disposable)
     }

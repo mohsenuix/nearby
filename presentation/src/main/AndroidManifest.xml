@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="ir.cafebazzar.app.ui.activity.detail.DetailActivity"/>
+        <activity android:name="ir.cafebazzar.app.ui.activity.detail.DetailActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        </activity>
     </application>
 </manifest>
