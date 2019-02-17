@@ -32,6 +32,8 @@ sealed class Venue {
                     @SerializedName("suffix") val suffix: String)
 
     data class VenuesResponse(@SerializedName("venues")
-                              val venues:List<ir.cafebazzar.app.network.dto.Venue.Venue>)
+                              val venues: List<ir.cafebazzar.app.network.dto.Venue.Venue>)
 
+    data class VenueResponse(@SerializedName("venue")
+                             val venue: ir.cafebazzar.app.network.dto.Venue.Venue)
 }

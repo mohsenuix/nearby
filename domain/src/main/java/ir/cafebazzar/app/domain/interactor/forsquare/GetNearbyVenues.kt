@@ -11,7 +11,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class GetNearby @Inject
+class GetNearbyVenues @Inject
 constructor(useCaseExecutor: UseCaseExecutor, postExecutionThread: PostExecutionThread,
             dataLayerRepository: DataLayerRepository)
     : SingleUseCase<List<VenueModel>, LatLng>(useCaseExecutor,

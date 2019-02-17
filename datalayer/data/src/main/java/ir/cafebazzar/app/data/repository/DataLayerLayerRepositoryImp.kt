@@ -12,6 +12,20 @@ import javax.inject.Singleton
 class DataLayerLayerRepositoryImp
 @Inject constructor(private val forsquareApi:ForSquareApi)
     :DataLayerRepository {
+    override fun getVenueDetails(id: String): Single<List<VenueModel>> {
+        return Single.create { emitter ->
+            forsquareApi.getVenueDetails(id).subscribe {
+                //todo add mapper!
+                response->
+                val list = ArrayList<VenueModel>()
+                response.response.venue.also { list.add(VenueModel(it.id,it.name,it.contact,it.location.address,
+                        LatLng(it.location.lat,it.location.lang),it.verified,it.location.distance,
+                        "")) }
+                emitter.onSuccess(list)
+            }
+        }
+    }
+
     override fun getNearbyVenues(ll: String): Single<List<VenueModel>> {
         return Single.create { emitter ->
                 forsquareApi.getNearbyVenues(ll).subscribe {

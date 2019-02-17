@@ -1,0 +1,22 @@
+package ir.cafebazzar.app.domain.interactor.forsquare
+import io.reactivex.Single
+import ir.cafebazzar.app.domain.entity.LatLng
+import ir.cafebazzar.app.domain.entity.VenueModel
+import ir.cafebazzar.app.domain.executor.PostExecutionThread
+import ir.cafebazzar.app.domain.executor.UseCaseExecutor
+import ir.cafebazzar.app.domain.interactor.SingleUseCase
+import ir.cafebazzar.app.domain.repository.DataLayerRepository
+import javax.inject.Inject
+import javax.inject.Singleton
+
+
+@Singleton
+class GetVenueDetail @Inject
+constructor(useCaseExecutor: UseCaseExecutor, postExecutionThread: PostExecutionThread,
+            dataLayerRepository: DataLayerRepository)
+    : SingleUseCase<List<VenueModel>, String>(useCaseExecutor,
+        postExecutionThread, dataLayerRepository) {
+    override fun interact(params: String?): Single<List<VenueModel>> {
+        return dataLayerRepository.getVenueDetails(params!!)
+    }
+}
