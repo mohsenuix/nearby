@@ -1,6 +1,5 @@
 package ir.cafebazzar.app.domain.interactor.forsquare
 import io.reactivex.Single
-import ir.cafebazzar.app.domain.entity.LatLng
 import ir.cafebazzar.app.domain.entity.VenueModel
 import ir.cafebazzar.app.domain.executor.PostExecutionThread
 import ir.cafebazzar.app.domain.executor.UseCaseExecutor
