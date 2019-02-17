@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import io.reactivex.disposables.CompositeDisposable
 import ir.cafebazzar.app.di.viewmodel.ViewModelFactory
 
 
@@ -14,12 +15,19 @@ abstract class BaseDaggerActivity<S:BaseViewState,VM:BaseViewModel<S>> :DaggerAp
     @Inject
     @JvmField
     var viewModelFactory: ViewModelFactory?=null
+    val clicksCompositDeposable: CompositeDisposable = CompositeDisposable()
+
 
     protected lateinit var viewModel: VM
 
     override fun onStart() {
         super.onStart()
         startObserving()
+    }
+
+    override fun onStop() {
+        clicksCompositDeposable.clear()
+        super.onStop()
     }
 
 

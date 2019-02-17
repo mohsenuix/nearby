@@ -11,7 +11,7 @@ import javax.inject.Inject
 class VenueRecyclerView @Inject constructor(@NonNull var diffCallback:VenueDiffCallBack,
                         var factory:VenueVHFactory) : ListAdapter<VenueModel, VenueVH>(diffCallback) {
 
-    private val mClickPS : PublishSubject<VenueVHAction> = PublishSubject.create()
+    val mClickPS : PublishSubject<VenueVHAction> = PublishSubject.create()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VenueVH {
             return factory.create(parent);

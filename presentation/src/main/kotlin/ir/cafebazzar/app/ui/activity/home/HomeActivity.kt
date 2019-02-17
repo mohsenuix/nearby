@@ -16,6 +16,7 @@ import com.patloew.rxlocation.RxLocation
 import com.tbruyelle.rxpermissions2.RxPermissions
 import android.annotation.SuppressLint
 import android.location.Location
+import ir.cafebazzar.app.util.distance
 
 
 class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
@@ -33,7 +34,8 @@ class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
         initRXLocation()
     }
 
-    @SuppressLint("MissingPermission")
+
+    @SuppressLint("MissingPermission")//it is ok IDE not support rxPermissions
     private fun initRXLocation() {
         // Create one instance and share it
         val rxLocation = RxLocation(this)
@@ -50,9 +52,9 @@ class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
                                     Timber.i("location is ${location.latitude} ," +
                                             "${location.longitude}")
                                     Timber.i("location is distance to " +
-                                            "${lastLocation?.distanceTo(location)}")
+                                            "${lastLocation?.distance(location)}")
                                     if (lastLocation!=null &&
-                                            lastLocation!!.distanceTo(location) > .1) {
+                                            lastLocation!!.distance(location) > .1) {
                                         viewModel.updateLocation(location)
                                     }
                                     lastLocation = location
@@ -76,6 +78,11 @@ class HomeActivity : BaseDaggerActivity<HomeViewState, HomeViewModel>() {
                 //todo load more
             }
         })
+        val disposable = venueAdapter.mClickPS
+                .subscribe { action ->
+                    Timber.i("clicked-- ${action.adapterPosition}")
+                }
+        clicksCompositDeposable.add(disposable)
     }
 
     override fun handleState(state: HomeViewState) {

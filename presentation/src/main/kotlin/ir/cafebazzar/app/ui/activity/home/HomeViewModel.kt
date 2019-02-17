@@ -16,12 +16,13 @@ init {
 
     //40.7484,-73.9857
     fun getNearbies(){
-        getNearby.execute(LatLng(40.7484,-73.9857)).subscribe({ venues->
+        val disposable = getNearby.execute(LatLng(40.7484,-73.9857)).subscribe({ venues->
             Timber.i("emitter size is"+venues.size)
             stateLD.postValue(HomeViewState(venues))
         },{t: Throwable? ->
             Timber.e(t)
         })
+        compositeDisposable.add(disposable)
     }
 
     fun updateLocation(location: Location?) {
